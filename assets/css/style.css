@@ -23,6 +23,34 @@ nav {
     top: 0;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #334257;
+}
+
+.bar-icon {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+#item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav a {
     font-size: 18px;
     font-weight: 400;
@@ -34,15 +62,16 @@ nav a:hover {
     font-weight: bold;
 }
 
-nav li {
-    display: inline;
+li {
     list-style-type: none;
-    margin-right: 20px;
 }
 
-nav a.bar-icon {
-    display: none;
+nav li {
+    /* display: inline;
+    list-style-type: none; */
+    margin-left: 5rem;
 }
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -117,8 +146,12 @@ aside {
 
 @media screen and (max-width: 513px){
 
-    #item {
+    /* #item {
         display: none;
+    } */
+
+    .menu {
+        min-height: 50px;
     }
 
     nav a {
@@ -129,18 +162,61 @@ aside {
         display: block;
     }
 
-    nav a.bar-icon {
+    /* nav a.bar-icon {
         background: #334257;
         display: block;
         position: absolute;
+        cursor: pointer;
         right: 0;
         top: 0;
-    }
+    } */
 
     nav a:hover {
         background-color: #334257;
         color: white;
     }
+
+    #item {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #334257;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    #item.active {
+        left: 0;
+    }
+
+    nav li {
+        margin: 2.5rem 0;
+    }
+
+    .bar-icon {
+        display: block;
+        cursor: pointer;
+        color: White;
+        right: 0;
+        top: 0;
+    }
+
+    .bar-icon.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .bar-icon.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .bar-icon.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
 
     main {
         /* display: flex; */
