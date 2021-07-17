@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 70px;
+}
+
 header {
     display: inline;
 }
@@ -27,7 +31,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     background-color: #334257;
 }
 
@@ -67,9 +71,7 @@ li {
 }
 
 nav li {
-    /* display: inline;
-    list-style-type: none; */
-    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 
@@ -77,27 +79,29 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    /* width: 100%;
-    display: flex;
-    flex-direction: column; */
+    background-color: #476072;
 }
 
 main {
     display: flex;
     padding: 20px;
-    /* overflow: auto; */
 }
 
 #content {
-    /* display: flex;
-    flex-direction: column;
-    padding: 20px; */
-
     flex-basis: 75%;
 }
 
 #content p {
     text-align: justify;
+    line-height: 150%;
+}
+
+#content h2, h3, p {
+    color: #EEEEEE;
+}
+
+.indentation {
+    text-indent: 5%;
 }
 
 .featured-image {
@@ -116,6 +120,11 @@ main {
 
 figcaption {
     text-align: center;
+    opacity: 0;
+}
+
+.profile {
+    background-color: #548CA8;
 }
 
 .profile img {
@@ -127,6 +136,7 @@ figcaption {
 
 .profile h2, h3 {
     text-align: center;
+    color: #EEEEEE;
 }
 
 th {
@@ -135,23 +145,19 @@ th {
 
 .bio {
     font-size: 0.7em;
+    color: #EEEEEE;
 }
 
 aside {
-    /* display: flex;
-    padding: 20px; */
     flex-basis: 25%;
     margin-left: 20px;
 }
 
 @media screen and (max-width: 513px){
 
-    /* #item {
-        display: none;
-    } */
-
     .menu {
         min-height: 50px;
+        padding: 1rem 1.5rem;
     }
 
     nav a {
@@ -162,27 +168,19 @@ aside {
         display: block;
     }
 
-    /* nav a.bar-icon {
-        background: #334257;
-        display: block;
-        position: absolute;
-        cursor: pointer;
-        right: 0;
-        top: 0;
-    } */
-
     nav a:hover {
         background-color: #334257;
         color: white;
     }
 
     #item {
-        position: fixed;
+        position: absolute;
         left: -100%;
-        top: 5rem;
+        top: 2rem;
         flex-direction: column;
         background-color: #334257;
         width: 100%;
+        padding: 0;
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
@@ -194,7 +192,7 @@ aside {
     }
 
     nav li {
-        margin: 2.5rem 0;
+        margin: 1rem 0;
     }
 
     .bar-icon {
@@ -219,17 +217,11 @@ aside {
     
 
     main {
-        /* display: flex; */
         flex-direction: column;
     }
 
     #content,
     aside {
-        /* display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 10px;
-        justify-content: center; */
         flex-basis: 100%;
     }
 
@@ -239,6 +231,7 @@ aside {
     
     aside {
         order: 2;
+        margin: 0 20px 0 20px;
     }
 }
 
